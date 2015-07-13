@@ -1,0 +1,24 @@
+{
+  "clientName": "client",
+  "version": "2",
+  "language": "en_US",
+  "logoImage": "logo_styleguide.png",
+  "breakpoints": [
+    {
+      "id": "full",
+      "name": "Full",
+      "size": "100%"
+    }
+  ],
+  "translations": {
+    "pt_BR": {
+      "begining": "Início",
+      "styleguide": "Styleguide"
+    },
+    "en_US": {
+      "begining": "Beginning",
+      "styleguide": "Styleguide"
+    }
+  },
+  "date": "2015/7/10"
+}

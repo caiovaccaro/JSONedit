@@ -5,9 +5,7 @@ var app = angular.module('exampleApp', ['JSONedit']);
 function MainViewCtrl($scope, $filter) {
 
     // example JSON
-    $scope.jsonData = {
-        Name: "Joe", "Last Name": "Miller", Address: {Street: "Neverland 42"}, Hobbies: ["doing stuff", "dreaming"]
-    };
+    $scope.jsonData = jsonToEdit;
 
     $scope.$watch('jsonData', function(json) {
         $scope.jsonString = $filter('json')(json);
