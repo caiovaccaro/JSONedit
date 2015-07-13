@@ -15,10 +15,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
-  console.log(req.originalUrl);
   fs.readFile(__dirname + '/public/data.json', 'utf8', function(err, data) {
-    console.log(data);
     res.render('index', { jsonContent: JSON.parse(data) });
+  });
+});
+
+app.post('/', function (req, res) {
+  fs.writeFile(__dirname + '/public/data.json', JSON.stringify(JSON.parse(req.body.jsonFile), null, 4), function(err) {
+    if(err) {
+      console.log('Could not save file.', err);
+    } else {
+      console.log('File saved: /public/data.json');
+    }
   });
 });
 

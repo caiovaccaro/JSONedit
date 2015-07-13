@@ -21,7 +21,7 @@ html(ng-app='JSONedit')
             div
                 textarea#jsonTextarea(ng-model='jsonString')
                 span.red(ng-if='!wellFormed') JSON not well-formed!
-            button(data-file='') Save
+            button(ng-click="saveFile()") Save
 
         - var jsonString = JSON.stringify(jsonContent)
         script.

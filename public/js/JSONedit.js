@@ -18,4 +18,18 @@ function MainViewCtrl($scope, $filter) {
             $scope.wellFormed = false;
         }
     }, true);
+
+    $scope.saveFile = function() {
+        $.ajax({
+            url: '/',
+            method: 'POST',
+            data: {
+                jsonFile: JSON.stringify($scope.jsonData)
+            },
+            dataType: 'text'
+        })
+        .always(function (data) {
+            //console.log(data);
+        });
+    }
 }
